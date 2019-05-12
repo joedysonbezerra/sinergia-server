@@ -1,0 +1,4 @@
+{
+  "url": "mongodb://localhost/grh-api-ad",
+  "flag": { "useNewUrlParser": "true", "useCreateIndex": "true" }
+}

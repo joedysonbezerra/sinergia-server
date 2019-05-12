@@ -1,0 +1,29 @@
+{
+  "name": "grh-api-ad",
+  "version": "1.0.0",
+  "description": "Projeto da cadeira de Gestão de Pessoas Api para software de avaliação de desempenho",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joedysonbezerra/GRH-API-AD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joedysonbezerra/GRH-API-AD/issues"
+  },
+  "homepage": "https://github.com/joedysonbezerra/GRH-API-AD#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.5.7",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
