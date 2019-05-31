@@ -33,5 +33,15 @@ module.exports = {
     } catch (error) {
       next(error);
     }
+  },
+  async addGrade(req, res, next) {
+    try {
+      const employee = await Employee.findOne({ id: req.params.id });
+      employee.grades.push(req.body.grade);
+      await employee.save();
+      res.json(employee);
+    } catch (error) {
+      next(error);
+    }
   }
 };
