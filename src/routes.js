@@ -16,17 +16,17 @@ routes.get("/employee/:id", controller.employeeController.search);
 routes.get("/allemployees", controller.employeeController.allSearch);
 routes.post("/employee", controller.employeeController.create);
 routes.delete("/employee/destroy/:id", controller.employeeController.destroy);
-
+routes.post("/employee/:id", controller.employeeController.addGrade);
 // * Departament Routes *//
 routes.post("/department", controller.departmentController.create);
-// routes.post(
-//   "/department/philosophical/:id",
-//   controller.departmentController.create
-// );
-// routes.post(
-//   "/department/technical/:id",
-//   controller.departmentController.create
-// );
+routes.post(
+  "/department/philosophical/:id",
+  controller.departmentController.addPhilosophical
+);
+routes.post(
+  "/department/technical/:id",
+  controller.departmentController.addTechnical
+);
 routes.get("/department/:id", controller.departmentController.search);
 routes.get("/alldepartments", controller.departmentController.allSearch);
 routes.delete(
