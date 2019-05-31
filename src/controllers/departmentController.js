@@ -33,5 +33,25 @@ module.exports = {
     } catch (error) {
       next(error);
     }
+  },
+  async addPhilosophical(req, res, next) {
+    try {
+      const department = await Department.findOne({ id: req.params.id });
+      department.philosophical.push(req.body.ability);
+      await department.save();
+      res.json(department);
+    } catch (error) {
+      next(error);
+    }
+  },
+  async addTechnical(req, res, next) {
+    try {
+      const department = await Department.findOne({ id: req.params.id });
+      department.technical.push(req.body.ability);
+      await department.save();
+      res.json(department);
+    } catch (error) {
+      next(error);
+    }
   }
 };
