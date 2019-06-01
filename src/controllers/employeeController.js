@@ -34,10 +34,20 @@ module.exports = {
       next(error);
     }
   },
-  async addGrade(req, res, next) {
+  async addGradePhilosophical(req, res, next) {
     try {
       const employee = await Employee.findOne({ id: req.params.id });
-      employee.grades.push(req.body.grade);
+      employee.gradesPhilosophical.push(req.body.grade);
+      await employee.save();
+      res.json(employee);
+    } catch (error) {
+      next(error);
+    }
+  },
+  async addGradeTechnical(req, res, next) {
+    try {
+      const employee = await Employee.findOne({ id: req.params.id });
+      employee.gradesTechnical.push(req.body.grade);
       await employee.save();
       res.json(employee);
     } catch (error) {

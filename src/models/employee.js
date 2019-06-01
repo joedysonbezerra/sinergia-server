@@ -25,7 +25,8 @@ const employeeSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  grades: [],
+  gradesPhilosophical: [],
+  gradesTechnical: [],
   createAt: {
     type: Date,
     default: Date.now
