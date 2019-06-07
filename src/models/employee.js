@@ -13,6 +13,10 @@ const employeeSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  positionId: {
+    type: Number,
+    required: true
+  },
   age: {
     type: String,
     required: true
