@@ -10,8 +10,15 @@ const departamentSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  philosophical: [],
-  technical: [],
+  position: {
+    type: [
+      {
+        id: { type: Number },
+        philosophical: { type: [] },
+        technical: { type: [] }
+      }
+    ]
+  },
   createAt: {
     type: Date,
     default: Date.now
