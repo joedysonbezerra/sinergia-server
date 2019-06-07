@@ -20,7 +20,9 @@ module.exports = {
   },
   async allSearch(req, res, next) {
     try {
-      const employee = await Employee.find().sort();
+      const employee = await Employee.find({
+        departmentId: req.params.department
+      }).limit(50);
       res.json(employee);
     } catch (error) {
       next(error);

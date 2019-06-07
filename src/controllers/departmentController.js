@@ -20,7 +20,9 @@ module.exports = {
   },
   async allSearch(req, res, next) {
     try {
-      const department = await Department.find().sort();
+      const department = await Department.find({
+        companyName: req.params.company
+      });
       res.json(department);
     } catch (error) {
       next(error);
