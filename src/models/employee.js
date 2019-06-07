@@ -25,8 +25,33 @@ const employeeSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  gradesPhilosophical: [],
-  gradesTechnical: [],
+  gradesPhilosophical: {
+    type: [
+      {
+        grade: {
+          type: Number
+        },
+        comments: {
+          type: String
+        },
+        weight: {
+          type: Number
+        }
+      }
+    ]
+  },
+  gradesTechnical: {
+    type: [
+      {
+        grade: {
+          type: Number
+        },
+        weight: {
+          type: Number
+        }
+      }
+    ]
+  },
   createAt: {
     type: Date,
     default: Date.now
