@@ -21,10 +21,6 @@ const employeeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  office: {
-    type: String,
-    required: true
-  },
   hiringDate: {
     type: Date,
     required: true

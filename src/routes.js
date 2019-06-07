@@ -13,10 +13,7 @@ routes.use(authMiddleware);
 
 // * Employee Routes *//
 routes.get("/employee/:id", controller.employeeController.search);
-routes.get(
-  "/employee/allemployees/:department",
-  controller.employeeController.allSearch
-);
+routes.get("/allemployees", controller.employeeController.allSearch);
 routes.post("/employee", controller.employeeController.create);
 routes.delete("/employee/destroy/:id", controller.employeeController.destroy);
 routes.post(
@@ -42,10 +39,7 @@ routes.post(
   controller.departmentController.addTechnical
 );
 routes.get("/department/:id", controller.departmentController.search);
-routes.get(
-  "/department/alldepartments/:company",
-  controller.departmentController.allSearch
-);
+routes.get("/alldepartments", controller.departmentController.allSearch);
 routes.delete(
   "/department/destroy/:id",
   controller.departmentController.destroy

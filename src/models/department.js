@@ -1,18 +1,14 @@
 const mongoose = require("mongoose");
 
 const departamentSchema = new mongoose.Schema({
-  companyName: {
-    type: String,
-    required: true
-  },
-  name: {
-    type: String,
-    required: true
-  },
   id: {
     type: String,
     required: true,
     unique: true
+  },
+  name: {
+    type: String,
+    required: true
   },
   position: {
     type: [
