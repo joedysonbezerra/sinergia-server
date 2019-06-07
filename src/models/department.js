@@ -13,9 +13,9 @@ const departamentSchema = new mongoose.Schema({
   position: {
     type: [
       {
-        id: { type: Number },
-        philosophical: { type: [] },
-        technical: { type: [] }
+        name: { type: String },
+        philosophical: { type: [], default: [] },
+        technical: { type: [], default: [] }
       }
     ]
   },
