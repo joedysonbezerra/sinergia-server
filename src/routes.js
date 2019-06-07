@@ -27,11 +27,15 @@ routes.post(
 // * Departament Routes *//
 routes.post("/department", controller.departmentController.create);
 routes.post(
-  "/department/philosophical/:id",
+  "/department/position/:id",
+  controller.departmentController.addPosition
+);
+routes.post(
+  "/department/philosophical/:department/:position",
   controller.departmentController.addPhilosophical
 );
 routes.post(
-  "/department/technical/:id",
+  "/department/technical/:department/:position",
   controller.departmentController.addTechnical
 );
 routes.get("/department/:id", controller.departmentController.search);
