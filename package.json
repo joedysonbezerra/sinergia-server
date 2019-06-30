@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/joedysonbezerra/GRH-API-AD.git"
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

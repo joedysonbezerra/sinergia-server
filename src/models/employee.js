@@ -1,61 +1,50 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const employeeSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  id: {
-    type: String,
-    required: true
-  },
-  departmentId: {
-    type: Number,
-    required: true
-  },
-  positionId: {
-    type: Number,
-    required: true
-  },
-  age: {
-    type: String,
-    required: true
-  },
-  hiringDate: {
-    type: Date,
-    required: true
-  },
-  gradesPhilosophical: {
-    type: [
-      {
-        grade: {
-          type: Number
+const EmployeeSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    department: {
+      type: mongoose.Schema.ObjectId,
+      required: true,
+    },
+    jobRole: {
+      type: mongoose.Schema.ObjectId,
+      required: true,
+    },
+    birthDate: {
+      type: Date,
+      required: true,
+    },
+    hiringDate: {
+      type: Date,
+      required: true,
+    },
+    skills: {
+      cultural: [
+        {
+          id: { type: Number, required: true },
+          value: { type: mongoose.Schema.Types.Mixed, required: true },
         },
-        comments: {
-          type: String
+      ],
+      technical: [
+        {
+          id: { type: Number, required: true },
+          value: { type: mongoose.Schema.Types.Mixed, required: true },
         },
-        weight: {
-          type: Number
-        }
-      }
-    ]
+      ],
+    },
   },
-  gradesTechnical: {
-    type: [
-      {
-        grade: {
-          type: Number
-        },
-        weight: {
-          type: Number
-        }
-      }
-    ]
-  },
-  createAt: {
-    type: Date,
-    default: Date.now
+  {
+    timestamps: true,
   }
-});
+);
 
-mongoose.model("Employee", employeeSchema);
+module.exports = mongoose.model('Employee', EmployeeSchema);
