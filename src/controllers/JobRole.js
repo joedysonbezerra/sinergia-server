@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const JobRole = mongoose.model('JobRole');
 
 module.exports = {
-  async Create(req, res, next) {
+  async create(req, res, next) {
     try {
       const jobRole = await JobRole.create(req.body);
 
@@ -11,7 +11,7 @@ module.exports = {
       next(error);
     }
   },
-  async Show(req, res, next) {
+  async show(req, res, next) {
     try {
       const jobRole = await JobRole.findById(req.params.id);
 
@@ -20,7 +20,7 @@ module.exports = {
       next(error);
     }
   },
-  async Index(req, res, next) {
+  async index(req, res, next) {
     try {
       const jobRoles = await JobRole.find();
 
@@ -29,7 +29,7 @@ module.exports = {
       next(error);
     }
   },
-  async Destroy(req, res, next) {
+  async destroy(req, res, next) {
     try {
       const jobRole = await JobRole.findByIdAndDelete(req.params.id);
 
@@ -38,11 +38,13 @@ module.exports = {
       next(error);
     }
   },
-  async Update(req, res, next) {
+  async update(req, res, next) {
     try {
       const jobRole = await JobRole.findByIdAndUpdate(req.params.id, {
         $set: req.body,
       });
+
+      await jobRole.save();
 
       res.json(jobRole);
     } catch (error) {

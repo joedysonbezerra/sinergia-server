@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 module.exports = {
-  async SignIn(req, res, next) {
+  async signIn(req, res, next) {
     try {
       const { username, password } = req.body;
 
@@ -24,7 +24,7 @@ module.exports = {
     }
   },
 
-  async SignUp(req, res, next) {
+  async signUp(req, res, next) {
     try {
       const { username } = req.body;
 

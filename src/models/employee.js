@@ -28,18 +28,16 @@ const EmployeeSchema = new mongoose.Schema(
       required: true,
     },
     skills: {
-      cultural: [
-        {
-          id: { type: Number, required: true },
-          value: { type: mongoose.Schema.Types.Mixed, required: true },
-        },
-      ],
-      technical: [
-        {
-          id: { type: Number, required: true },
-          value: { type: mongoose.Schema.Types.Mixed, required: true },
-        },
-      ],
+      cultural: Number, //gambiarra
+      // [{
+      //     id: { type: Number, required: true },
+      //     value: { type: mongoose.Schema.Types.Mixed, required: true },
+      // }],
+      technical: Number, //gambiarra
+      // [{
+      //     id: { type: Number, required: true },
+      //     value: { type: mongoose.Schema.Types.Mixed, required: true },
+      // }],
     },
   },
   {

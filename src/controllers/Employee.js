@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Employee = mongoose.model('Employee');
 
 module.exports = {
-  async Create(req, res, next) {
+  async create(req, res, next) {
     try {
       const employee = await Employee.create(req.body);
 
@@ -11,7 +11,7 @@ module.exports = {
       next(error);
     }
   },
-  async Show(req, res, next) {
+  async show(req, res, next) {
     try {
       const employee = await Employee.findOne({ id: req.params.id });
 
@@ -20,7 +20,7 @@ module.exports = {
       next(error);
     }
   },
-  async Index(req, res, next) {
+  async index(req, res, next) {
     try {
       const employees = await Employee.find();
 
@@ -29,7 +29,7 @@ module.exports = {
       next(error);
     }
   },
-  async Destroy(req, res, next) {
+  async destroy(req, res, next) {
     try {
       const employee = await Employee.deleteOne({ id: req.params.id });
 
@@ -38,7 +38,7 @@ module.exports = {
       next(error);
     }
   },
-  async Update(req, res, next) {
+  async update(req, res, next) {
     try {
       const employee = await Employee.updateOne(
         { id: req.params.id },

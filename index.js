@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const requireDir = require('require-dir');
 const path = require('path');
 const dbConfig = require('./config/database');
@@ -13,6 +14,7 @@ const models = path.resolve('src', 'models');
 requireDir(models);
 
 app.use(express.json());
+app.use(cors());
 app.use('/api', require('./src/routes'));
 
 app.listen(port, () =>
